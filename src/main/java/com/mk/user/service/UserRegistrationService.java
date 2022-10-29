@@ -23,8 +23,6 @@ import java.util.UUID;
 @Transactional(rollbackFor = {UserNotFoundException.class,DublicateUserException.class,RuntimeException.class})
 public class UserRegistrationService {
 
-
-
 	private static final Logger logger = LoggerFactory.getLogger(UserRegistrationService.class);
 
 	private UserRepository userRepository;
