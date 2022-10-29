@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: mk_user
+  jpa:
+    database: POSTGRESQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mk_user?currentSchema=mk
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      max-lifetime: 2000000
+      connection-timeout: 30000
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db-master.xml
+    url: jdbc:postgresql://localhost:5432/mk_user?currentSchema=public
+    user: postgres
+    password: postgres
